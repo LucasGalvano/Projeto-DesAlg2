@@ -4,12 +4,15 @@
 #include <time.h>
 #include "funcoes.h"
 
+int main(void)
+{
 
-int main(void){
+    Relatorio novo_relatorio;
 
     int opcao, continuar = 1;
 
-    while(continuar){
+    while (continuar)
+    {
         printf("\n=-=-= Menu da Loja =-=-=\n");
         printf("1. Registrar venda\n");
         printf("2. Adicionar Estoque\n");
@@ -21,35 +24,36 @@ int main(void){
         printf("8. Sair\n");
         printf("Digite sua opcao: ");
         scanf("%d", &opcao);
-        
-        switch(opcao){
-            case 1:
-                printf("Registrar venda\n");
-                break;
-            case 2:
-                printf("Adicionar Estoque\n");
-                break;
-            case 3:
-                printf("Consultar estoque\n");
-                break;
-            case 4:
-                printf("Funcionarios\n");
-                break;
-            case 5:
-                printf("Cadastrar clientes\n");
-                break;
-            case 6:
-                printf("Gerar relatorio\n");
-                break;
-            case 7:
-                printf("Caixa da loja\n");
-                break;
-            case 8:
-                printf("Saindo...\n");
-                continuar = 0;
-                break;
-            default:
-                printf("Opcao invalida.\n");
+
+        switch (opcao)
+        {
+        case 1:
+            printf("Registrar venda\n");
+            break;
+        case 2:
+            printf("Adicionar Estoque\n");
+            break;
+        case 3:
+            printf("Consultar estoque\n");
+            break;
+        case 4:
+            printf("Funcionarios\n");
+            break;
+        case 5:
+            printf("Cadastrar clientes\n");
+            break;
+        case 6:
+            gerarRelatorio();
+            break;
+        case 7:
+            printf("Caixa da loja\n");
+            break;
+        case 8:
+            printf("Saindo...\n");
+            continuar = 0;
+            break;
+        default:
+            printf("Opcao invalida.\n");
         }
     }
 
