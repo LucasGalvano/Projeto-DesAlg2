@@ -9,12 +9,12 @@ int main(void)
 
     Relatorio novo_relatorio;
 
-    int opcao, continuar = 1;
-    //função que gera a senha (mudar conforme o codigo evoluir)
+    //funçao q gera senha(mudar conforme o códifo evolui)
     gera_senha();
-    
-    while (continuar)
-    {
+
+    int opcao, continuar = 1;
+
+    while(continuar){
         printf("\n=-=-= Menu da Loja =-=-=\n");
         printf("1. Registrar venda\n");
         printf("2. Adicionar Estoque\n");

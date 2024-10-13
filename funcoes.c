@@ -3,9 +3,11 @@
 #include <stdlib.h>
 #include <string.h>
 
-void clearBuffer(){
+void clearBuffer()
+{
     int c;
-    while ((c = getchar()) != '\n' && c != EOF);
+    while ((c = getchar()) != '\n' && c != EOF)
+        ;
 }
 
 void salvarRelatorio(Relatorio novo_relatorio)
@@ -42,13 +44,12 @@ void gerarRelatorio()
 
 //função que gera senha
 int gera_senha(){
-    // Inicializa o gerador de números aleatórios
     srand(time(NULL));
 
-    // Gera e imprime uma senha de 6 dígitos
+    //loop q gera a senha numerica
     printf("Senha gerada: ");
     for (int i = 0; i < 6; i++) {
-        printf("%d", rand() % 10);  // Gera um número aleatório entre 0 e 9
+        printf("%d", rand() % 10);
     }
     
     printf("\n");
