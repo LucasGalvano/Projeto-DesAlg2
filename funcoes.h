@@ -15,5 +15,5 @@ void clearBuffer();
 void salvarRelatorio(Relatorio novo_relatorio);
 void gerarRelatorio();
 void consultarRelatorio();
-
+int gera_senha();
 #endif

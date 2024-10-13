@@ -39,3 +39,17 @@ void gerarRelatorio()
     // Salvando o relatório
     salvarRelatorio(novo_relatorio);
 }
+
+//função que gera senha
+int gera_senha(){
+    // Inicializa o gerador de números aleatórios
+    srand(time(NULL));
+
+    // Gera e imprime uma senha de 6 dígitos
+    printf("Senha gerada: ");
+    for (int i = 0; i < 6; i++) {
+        printf("%d", rand() % 10);  // Gera um número aleatório entre 0 e 9
+    }
+    
+    printf("\n");
+}

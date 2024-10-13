@@ -10,7 +10,9 @@ int main(void)
     Relatorio novo_relatorio;
 
     int opcao, continuar = 1;
-
+    //função que gera a senha (mudar conforme o codigo evoluir)
+    gera_senha();
+    
     while (continuar)
     {
         printf("\n=-=-= Menu da Loja =-=-=\n");
