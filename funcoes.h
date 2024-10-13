@@ -10,9 +10,16 @@ typedef struct
     char conteudo[255];
 } Relatorio;
 
-void clearBuffer();
 
+// Definição da estrutura da loja
+struct Loja {
+    char nome_loja[50];
+    char senha[7];
+};
+
+void clearBuffer();
+void cadastrar_loja(struct Loja *loja);
+int login(struct Loja *loja);
 void salvarRelatorio(Relatorio novo_relatorio);
 void gerarRelatorio();
-int gera_senha();
 #endif

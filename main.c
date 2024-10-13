@@ -6,11 +6,17 @@
 
 int main(void)
 {
+    struct Loja loja;
+    int logado = 0;
+
+    cadastrar_loja(&loja);
+
+    // Loop para tentativa de login
+    while (!logado) {
+        logado = login(&loja);
+    }
 
     Relatorio novo_relatorio;
-
-    //funçao q gera senha(mudar conforme o códifo evolui)
-    gera_senha();
 
     int opcao, continuar = 1;
 

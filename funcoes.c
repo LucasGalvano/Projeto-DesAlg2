@@ -6,8 +6,7 @@
 void clearBuffer()
 {
     int c;
-    while ((c = getchar()) != '\n' && c != EOF)
-        ;
+    while ((c = getchar()) != '\n' && c != EOF);
 }
 
 void salvarRelatorio(Relatorio novo_relatorio)
@@ -41,16 +40,53 @@ void gerarRelatorio()
     // Salvando o relatório
     salvarRelatorio(novo_relatorio);
 }
+// Função para cadastro
+void cadastrar_loja(struct Loja *loja) {
+    // Nome da loja 
+    printf("Digite o nome da loja: ");
+    fgets(loja->nome_loja, 50, stdin);
+    loja->nome_loja[strcspn(loja->nome_loja, "\n")] = '\0';
 
-//função que gera senha
-int gera_senha(){
-    srand(time(NULL));
+    // Senha
+    int senhaValida = 0;
+    while (!senhaValida) {
+        printf("Digite uma senha de 6 digitos: ");
+        fgets(loja->senha, 7, stdin);
+        loja->senha[strcspn(loja->senha, "\n")] = '\0';
 
-    //loop q gera a senha numerica
-    printf("Senha gerada: ");
-    for (int i = 0; i < 6; i++) {
-        printf("%d", rand() % 10);
+        // Verifica se a senha tem exatamente 6 caracteres
+        if (strlen(loja->senha) == 6) {
+            senhaValida = 1; 
+        }
+        else {
+            printf("A senha deve ter exatamente 6 digitos.\n");
+        }
+        clearBuffer();
     }
-    
-    printf("\n");
+    printf("Cadastro realizado com sucesso!\n\n");
+}
+
+// Função para login
+int login(struct Loja *loja) {
+    char nome_login[50];
+    char senha_login[7];
+    printf("--- Login ---\n");
+    printf("Digite o nome da loja: ");
+    fgets(nome_login, 50, stdin);
+    nome_login[strcspn(nome_login, "\n")] = '\0';
+
+    printf("Digite a senha: ");
+    fgets(senha_login, 7, stdin);
+    senha_login[strcspn(senha_login, "\n")] = '\0';
+
+    clearBuffer();
+    // Valida oq foi digitado no login
+    if (strcmp(loja->nome_loja, nome_login) == 0 && strcmp(loja->senha, senha_login) == 0) {
+        printf("Login realizado com sucesso!\n");
+        return 1;
+    }
+    else {
+        printf("Nome e/ou senha incorretos. Tente novamente.\n");
+        return 0;
+    }
 }
