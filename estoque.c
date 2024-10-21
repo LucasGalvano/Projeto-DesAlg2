@@ -3,6 +3,7 @@
 #include <string.h>
 #include <time.h>
 #include "estoque.h"
+#include "funcoes.h"
 
 int qtd_produtos = 0;
 int codigo;
@@ -19,6 +20,11 @@ void adicionar_estoque() {
 
     struct Produto novo_produto;
 
+    //info para o codigo gerado
+    srand(time(NULL));
+    int *codigos = NULL;
+    int tamanho = 0;
+  
 // Solicita e valida as informacões do produto
 
     //tipo do produto
@@ -42,17 +48,14 @@ void adicionar_estoque() {
         getchar();
     } while (novo_produto.valor <= 0);
 
-    // codigo do produto
-    int i;
-    srand(time(NULL));
-    for (i = 0; i < 999; i++) {
-        novo_produto.codigo = rand() % 1000;
-    }
-    printf("Codigo: %d \n", novo_produto.codigo);
+    do {
+        novo_produto.codigo = gera_codigo();
+        printf("Codigo do produto: %d\n", novo_produto.codigo);
+    } while (checa_codigo(&codigos, &tamanho, novo_produto.codigo) != 0);
 
-    // Adiciona o produto ao estoque
     estoque[qtd_produtos] = novo_produto;
     qtd_produtos++;
+    printf("Produto adicionado com sucesso!\n");
 
     //salva no txt
     estoque_txt(novo_produto);

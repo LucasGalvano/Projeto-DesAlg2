@@ -13,4 +13,7 @@ Codigo: 752
 Tipo: camisa do trikas
 Tamanho: G
 Valor: 300.00
-Codigo: 410
+Codigo: 410Tipo: ropa
+Tamanho: M
+Valor: 400.00
+Codigo: 465
