@@ -1,69 +1,75 @@
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
+#include <string.h>
 #include <time.h>
 #include "funcoes.h"
 
-int main(void)
-{
+int main() {
+
+    // Def para a loja
     struct Loja loja;
     int logado = 0;
-
     cadastrar_loja(&loja);
 
-    // Loop para tentativa de login
     while (!logado) {
         logado = login(&loja);
     }
 
-    Relatorio novo_relatorio;
-
+    // def para codigo 
+    srand(time(NULL));
+    int *codigos = NULL;
+    int tamanho = 0;
+    int qtd_produtos = 0;
     int opcao, continuar = 1;
 
-    while(continuar){
+    while (continuar) {
         printf("\n=-=-= Menu da Loja =-=-=\n");
         printf("1. Registrar venda\n");
         printf("2. Adicionar Estoque\n");
         printf("3. Consultar estoque\n");
-        printf("4. Funcionarios\n");
-        printf("5. Cadastrar clientes\n");
-        printf("6. Gerar relatorio\n");
-        printf("7. Caixa da loja\n");
-        printf("8. Sair\n");
+        printf("4. Buscar no estoque\n");
+        printf("5. Funcionarios\n");
+        printf("6. Cadastrar clientes\n");
+        printf("7. Gerar relatorio\n");
+        printf("8. Caixa da loja\n");
+        printf("9. Sair\n");
         printf("Digite sua opcao: ");
         scanf("%d", &opcao);
 
-        switch (opcao)
-        {
-        case 1:
-            printf("Registrar venda\n");
-            break;
-        case 2:
-            printf("Adicionar Estoque\n");
-            break;
-        case 3:
-            printf("Consultar estoque\n");
-            break;
-        case 4:
-            printf("Funcionarios\n");
-            break;
-        case 5:
-            printf("Cadastrar clientes\n");
-            break;
-        case 6:
-            gerarRelatorio();
-            break;
-        case 7:
-            printf("Caixa da loja\n");
-            break;
-        case 8:
-            printf("Saindo...\n");
-            continuar = 0;
-            break;
-        default:
-            printf("Opcao invalida.\n");
+        switch (opcao) {
+            case 1:
+                printf("Registrar venda\n");
+                break;
+            case 2:
+                printf("Adicionar estoque\n");
+                break;
+            case 3:
+                printf("Consultar estoque\n");
+                break;
+            case 4:
+                printf("Buscar no estoque\n");
+                break;
+            case 5:
+                printf("Funcionarios\n");
+                break;
+            case 6:
+                printf("Cadastrar clientes\n");
+                break;
+            case 7:
+                gerarRelatorio();
+                break;
+            case 8:
+                printf("Caixa da loja\n");
+                break;
+            case 9:
+                printf("Saindo...\n");
+                continuar = 0;
+                break;
+            default:
+                printf("Opção invalida.\n");
         }
     }
 
+    free(codigos);
     return 0;
 }
