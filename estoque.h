@@ -12,6 +12,7 @@ struct Produto {
     int codigo;
 };
 
+
 void adicionar_estoque(struct Produto *estoque, int *qtd_produtos);
 void estoque_txt(struct Produto produto);
 void exibir_estoque(struct Produto *estoque, int *qtd_produtos);

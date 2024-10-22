@@ -70,3 +70,7 @@ Tipo: 1
 Tamanho: 1
 Valor: 4000.00
 Codigo: 994
+Tipo: camisa
+Tamanho: m
+Valor: 120.00
+Codigo: 591

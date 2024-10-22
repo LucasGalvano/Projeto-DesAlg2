@@ -45,7 +45,7 @@ void salvarRelatorio(Relatorio novo_relatorio) {
         return;
     }
 
-    fprintf(file, "Conteudo: %s\n\n", novo_relatorio.conteudo);
+    fprintf(file, "Conteudo: %s\n", novo_relatorio.conteudo);
     fclose(file);
     printf("Relatorio salvo e exibido:\n");
     printf("Conteudo: %s\n\n", novo_relatorio.conteudo);
@@ -54,7 +54,6 @@ void salvarRelatorio(Relatorio novo_relatorio) {
 void gerarRelatorio() {
     Relatorio novo_relatorio;
     printf("Digite o conteudo do relatorio: ");
-    clearBuffer();
     fgets(novo_relatorio.conteudo, sizeof(novo_relatorio.conteudo), stdin);
     novo_relatorio.conteudo[strcspn(novo_relatorio.conteudo, "\n")] = 0;
     salvarRelatorio(novo_relatorio);
