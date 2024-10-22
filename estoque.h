@@ -11,13 +11,9 @@ struct Produto {
     float valor;
     int codigo;
 };
-int *qtd_produtos = 0;
 
-// Array para armazenar os produtos
-struct Produto estoque[MAX_PRODUTOS];
-
-void adicionar_estoque();
+void adicionar_estoque(struct Produto *estoque, int *qtd_produtos);
 void estoque_txt(struct Produto produto);
-void exibir_estoque();
-void buscar_produto();
+void exibir_estoque(struct Produto *estoque, int *qtd_produtos);
+void buscar_produto(struct Produto *estoque, int *qtd_produtos);
 #endif

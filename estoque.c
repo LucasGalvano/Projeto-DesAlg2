@@ -6,11 +6,8 @@
 #include "funcoes.h"
 
 
-// Array para armazenar os produtos
-struct Produto estoque[MAX_PRODUTOS];
-
 //funcao para add estoque
-void adicionar_estoque() {
+void adicionar_estoque(struct Produto *estoque, int *qtd_produtos) {
     if (*qtd_produtos >= MAX_PRODUTOS) {
         printf("O estoque esta cheio. Nao e possível adicionar mais produtos.\n");
         return;
@@ -52,8 +49,8 @@ void adicionar_estoque() {
     } while (checa_codigo(&codigos, &tamanho, novo_produto.codigo) != 0);
 
     estoque[*qtd_produtos] = novo_produto;
-    *qtd_produtos++;
-    printf("Produto adicionado com sucesso!\n");
+    (*qtd_produtos)++;
+    printf("Produto adicionado com sucesso! Total de produtos: %d\n", *qtd_produtos);
 
     //salva no txt
     estoque_txt(novo_produto);
@@ -78,7 +75,7 @@ void estoque_txt(struct Produto produto) {
 }
 
 // Funcao para exibir todo o estoque
-void exibir_estoque() {
+void exibir_estoque(struct Produto *estoque, int *qtd_produtos) {
     if (*qtd_produtos == 0) {
         printf("O estoque esta vazio.\n");
         return;
@@ -97,7 +94,7 @@ void exibir_estoque() {
 }
 
 // Funcao para buscar um produto pelo codigo
-void buscar_produto() {
+void buscar_produto(struct Produto *estoque, int *qtd_produtos) {
     if (*qtd_produtos == 0) {
         printf("O estoque esta vazio. Adicione algo para consulta-lo.\n");
         return;
