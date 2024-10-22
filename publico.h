@@ -18,4 +18,9 @@ struct Cliente{
     char nome[50];
     char cpf[12];
 };
+
+//chamadno as funcoes
+
+void cadastrar_funcionario(struct Funcionarios *funcionario);
+void cadastrar_cliente(struct Cliente *cliente);
 #endif
