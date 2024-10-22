@@ -14,7 +14,7 @@ struct Funcionarios{
 };
 
 // Estrutura para armazenar os clientes
-struct Funcionarios{
+struct Cliente{
     char nome[50];
     char cpf[12];
 };

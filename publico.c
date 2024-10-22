@@ -27,7 +27,7 @@ void cadastrar_funcionario(struct Funcionarios *funcionario){
     printf("Funcionario cadastrado com sucesso!\n\n");
 }
 
-void cadastrar_cliente(struct Funcionarios *cliente){
+void cadastrar_cliente(struct Cliente *cliente){
     printf("Digite o nome do cliente: ");
     fgets(cliente->nome, 50, stdin);
     cliente->nome[strcspn(cliente->nome, "\n")] = '\0';
