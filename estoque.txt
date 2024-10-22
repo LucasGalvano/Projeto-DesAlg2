@@ -62,3 +62,11 @@ Tipo: Camisa do muricy 2008
 Tamanho: M
 Valor: 4000.00
 Codigo: 86
+Tipo: vestido
+Tamanho: M
+Valor: 300.00
+Codigo: 838
+Tipo: 1
+Tamanho: 1
+Valor: 4000.00
+Codigo: 994

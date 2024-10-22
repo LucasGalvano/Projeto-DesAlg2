@@ -5,10 +5,11 @@
 #include <stdlib.h>
 #include <string.h>
 
-// Estrutura para os funcionarios
+// Estrutura para os funcionarios e cliente
 #define cota 3000.00
 #define bonus 500.00
 #define MAX_FUNCIONARIOS 10
+#define MAX_CLIENTES 100
 
 struct Funcionarios{
     char nome[50];
@@ -26,7 +27,8 @@ struct Cliente{
     char cpf[12];
 };
 
-void cadastrar_cliente(struct Cliente* cliente);
+void cadastrar_cliente(struct Cliente* cliente, int *);
+void consultar_cliente(struct Cliente* cliente, int);
 void cadastrar_funcionario(struct Funcionarios *funcionarios, int *qtd_funcionarios);
 void consultar_funcionario(struct Funcionarios *funcionarios, int qtd_funcionarios);
 #endif

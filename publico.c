@@ -48,7 +48,7 @@ void cadastrar_funcionario(struct Funcionarios *funcionarios, int *qtd_funcionar
 
 void consultar_funcionario(struct Funcionarios *funcionarios, int qtd_funcionarios) {
     if (qtd_funcionarios == 0) {
-        printf("Nenhum funcionario cadastrado, cadastre um e volte aqui.\n");
+        printf("Nenhum funcionario cadastrado, cadastre um e volte mais tarde!.\n");
         return;
     }
 
@@ -64,7 +64,7 @@ void consultar_funcionario(struct Funcionarios *funcionarios, int qtd_funcionari
     }
 }
 
-void cadastrar_cliente(struct Cliente *cliente){
+void cadastrar_cliente(struct Cliente *cliente, int *qtd_cliente){
     printf("Digite o nome do cliente: ");
     fgets(cliente->nome, 50, stdin);
     cliente->nome[strcspn(cliente->nome, "\n")] = '\0';
@@ -85,4 +85,18 @@ void cadastrar_cliente(struct Cliente *cliente){
         clearBuffer();
     }
     printf("Cliente cadastrado com sucesso!\n\n");
+}
+
+void consultar_cliente(struct Cliente *cliente, int qtd_cliente){
+    if (qtd_cliente == 0) {
+        printf("Nenhum cliente cadastrado, cadastre um e volte mais tarde!.\n");
+        return;
+    }
+    printf("\n--- Clientes Atuais ---\n");
+    int i;
+    for (i = 0; i < qtd_cliente; i++) {
+        printf("Nome: %s\n", cliente[i].nome);
+        printf("CPF: %s\n", cliente[i].cpf);
+        printf("-------------\n");
+    }
 }

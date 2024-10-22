@@ -11,6 +11,7 @@
 int main() {
 
     // Def para a loja
+    float caixa = 50000.00;
     struct Loja loja;
     int logado = 0;
     cadastrar_loja(&loja);
@@ -23,9 +24,11 @@ int main() {
     int qtd_produtos = 0;
     struct Produto estoque[MAX_PRODUTOS];
 
-    // Def para funcionarios
+    // Def para funcionarios e cliente
     int qtd_funcionarios = 0;
+    int qtd_cliente = 0;
     struct Funcionarios funcionarios[MAX_FUNCIONARIOS];
+
     // def para codigo 
     srand(time(NULL));
     int *codigos = NULL;
@@ -36,6 +39,7 @@ int main() {
     struct Funcionarios funcionario;
     struct Cliente cliente;
 
+    // loop do menu
     while (continuar) {
         printf("\n=-=-= Menu da Loja =-=-=\n");
         printf("1. Registrar venda\n");
@@ -73,16 +77,16 @@ int main() {
                 consultar_funcionario(funcionarios, qtd_funcionarios);
                 break;
             case 7:
-                cadastrar_cliente(&cliente);
+                cadastrar_cliente(&cliente, &qtd_cliente);
                 break;
             case 8:
-                printf("Consultar clientes\n");
+                consultar_cliente(&cliente, qtd_cliente);
                 break;
             case 9:
                 gerarRelatorio();
                 break;
             case 10:
-                printf("Caixa da loja\n");
+                printf("Caixa da loja; R$: %.2f\n", &caixa);
                 break;
             case 11:
                 printf("Saindo...\n");
