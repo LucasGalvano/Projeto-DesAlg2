@@ -8,9 +8,9 @@
 #include "caixa.h"
 
 // Funcao para registrar venda
-void registrar_venda(struct Produto *estoque, int *qtd_produtos, struct Funcionarios *funcionarios, int qtd_funcionarios) {
+void registrar_venda(struct Produto *estoque, int *qtd_produtos, struct Funcionarios *funcionarios, int qtd_funcionarios, struct Caixa *caixa) {
     printf("--- Registrar venda ---\n");
-    
+
     // Exibe o estoque disponivel
     printf("--- Estoque disponivel ---\n");
     int i;
@@ -60,7 +60,7 @@ void registrar_venda(struct Produto *estoque, int *qtd_produtos, struct Funciona
     while (!produto_encontrado) {
         printf("Digite o codigo do produto que sera vendido: ");
         scanf("%d", &codigo_busca);
-        getchar(); 
+        getchar();
 
         // Verifica se o produto esta no estoque
         for (i = 0; i < *qtd_produtos; i++) {
@@ -107,4 +107,9 @@ void registrar_venda(struct Produto *estoque, int *qtd_produtos, struct Funciona
 
     // Exibe o total atualizado de vendas do funcionario
     printf("Total de vendas de %s: R$ %.2f\n", vendedor->nome, vendedor->total_vendas);
-}
+
+    // Atualiza o saldo do caixa
+    caixa->saldo += valor_venda;
+    printf("\nO valor de R$ %.2f foi adicionado ao caixa.\n", valor_venda);
+    printf("Saldo atual do caixa: R$ %.2f\n", caixa->saldo);
+};

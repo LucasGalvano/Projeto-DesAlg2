@@ -74,3 +74,19 @@ Tipo: camisa
 Tamanho: m
 Valor: 120.00
 Codigo: 591
+Tipo: camisa
+Tamanho: p
+Valor: 200.00
+Codigo: 638
+Tipo: camisa pp
+Tamanho: pp
+Valor: 800.00
+Codigo: 860
+Tipo: polo
+Tamanho: gg
+Valor: 1000.00
+Codigo: 684
+Tipo: palio
+Tamanho: gigante
+Valor: 20000.00
+Codigo: 382
