@@ -1,9 +1,8 @@
 Loja de Roupas - Sistema de Gestao
 
 Este projeto consiste em um sistema de gestao para uma loja de roupas, com diversas funcionalidades que permitem controlar as vendas, estoque, cadastro de funcionarios e clientes, alem de gerar relatorios e gerenciar o caixa da loja. O codigo foi organizado em diferentes branches, cada uma responsavel por um aspecto especifico da operacao da loja.
-----------------------------------------------------
-Funcionalidades Principais
 
+Funcionalidades Principais
 O sistema oferece as seguintes opcoes no menu principal:
 
 1-Registrar venda: Permite registrar uma nova venda no sistema.
@@ -17,7 +16,7 @@ O sistema oferece as seguintes opcoes no menu principal:
 9-Gerar Relatorio: Gera relatorios de vendas, estoque e outras informacoes relevantes.
 10-Caixa da Loja: Gerencia o fluxo de dinheiro da loja.
 11-Sair: Encerra o programa.
-----------------------------------------------------
+
 Estrutura do Codigo
 O codigo do projeto foi dividido em diferentes branches para facilitar o desenvolvimento e organizacao:
 
