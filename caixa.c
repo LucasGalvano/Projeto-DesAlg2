@@ -39,8 +39,12 @@ void registrar_venda(struct Produto *estoque, int *qtd_produtos, struct Funciona
     // Solicitar e validar o ID do funcionario
     while (!funcionario_encontrado) {
         printf("Digite o ID do funcionario que realizou a venda: ");
-        scanf("%d", &id_funcionario);
-        getchar();
+        if (scanf("%d", &id_funcionario) != 1){
+            printf("Erro ao ler valor, tente novamente.\n");
+            clearBuffer();
+            continue;
+        }
+        clearBuffer();
 
         // Verifica se o ID corresponde a um funcionario valido
         for (i = 0; i < qtd_funcionarios; i++) {
@@ -59,8 +63,12 @@ void registrar_venda(struct Produto *estoque, int *qtd_produtos, struct Funciona
     // Solicitar e validar o codigo do produto
     while (!produto_encontrado) {
         printf("Digite o codigo do produto que sera vendido: ");
-        scanf("%d", &codigo_busca);
-        getchar();
+        if(scanf("%d", &codigo_busca) != 1){
+            printf("Erro ao ler codigo, tente novamente.\n");
+            clearBuffer();
+            continue;
+        }
+        clearBuffer();
 
         // Verifica se o produto esta no estoque
         for (i = 0; i < *qtd_produtos; i++) {

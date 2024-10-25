@@ -54,21 +54,30 @@ void salvarRelatorio(Relatorio novo_relatorio) {
 void gerarRelatorio() {
     Relatorio novo_relatorio;
     printf("Digite o conteudo do relatorio: ");
-    fgets(novo_relatorio.conteudo, sizeof(novo_relatorio.conteudo), stdin);
+    if(fgets(novo_relatorio.conteudo, sizeof(novo_relatorio.conteudo), stdin) == NULL) {
+        printf("Erro ao ler conteudo do relatorio.\n");
+        return;
+    }
     novo_relatorio.conteudo[strcspn(novo_relatorio.conteudo, "\n")] = 0;
     salvarRelatorio(novo_relatorio);
 }
 
 void cadastrar_loja(struct Loja *loja) {
     printf("Digite o nome da loja: ");
-    fgets(loja->nome_loja, 50, stdin);
+    if(fgets(loja->nome_loja, sizeof(loja->nome_loja), stdin) == NULL) {
+        printf("Erro ao ler nome da loja.\n");
+        return;
+    }
     loja->nome_loja[strcspn(loja->nome_loja, "\n")] = '\0';
-
+    
     int senhaValida = 0;
 
     while (!senhaValida) {
         printf("Digite uma senha de 6 digitos: ");
-        fgets(loja->senha, 7, stdin);
+        if(fgets(loja->senha, sizeof(loja->senha), stdin) == NULL){
+            printf("Erro ao ler senha, tente novamente.\n");
+            return;
+        }
         loja->senha[strcspn(loja->senha, "\n")] = '\0';
 
         if (strlen(loja->senha) == 6) {
@@ -88,11 +97,17 @@ int login(struct Loja *loja) {
 
     printf("--- Login ---\n");
     printf("Digite o nome da loja: ");
-    fgets(nome_login, 50, stdin);
+    if (fgets(nome_login, sizeof(nome_login), stdin) == NULL){
+        printf("Erro ao ler nome da loja, tente novamente.\n");
+        return 0;
+    }
     nome_login[strcspn(nome_login, "\n")] = '\0';
 
     printf("Digite a senha: ");
-    fgets(senha_login, 7, stdin);
+    if(fgets(senha_login, sizeof(senha_login), stdin) == NULL){
+        printf("Erro ao ler senha, tente novamente.\n");
+        return 0;
+    }
     senha_login[strcspn(senha_login, "\n")] = '\0';
 
     clearBuffer();

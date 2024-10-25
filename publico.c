@@ -12,7 +12,10 @@ void cadastrar_funcionario(struct Funcionarios *funcionarios, int *qtd_funcionar
     // Nome do funcionário
     do {
         printf("Digite o nome do funcionario: ");
-        fgets(novo_funcionario.nome, 50, stdin);
+        if(fgets(novo_funcionario.nome, sizeof(novo_funcionario.nome), stdin) == NULL){
+            printf("Erro ao ler nome, tente novamente.\n");
+            return;
+        }
         novo_funcionario.nome[strcspn(novo_funcionario.nome, "\n")] = '\0';
     } while (strlen(novo_funcionario.nome) == 0);
 
@@ -21,7 +24,10 @@ void cadastrar_funcionario(struct Funcionarios *funcionarios, int *qtd_funcionar
 
     while (!cpf_valido) {
         printf("Digite o CPF do funcionario: ");
-        fgets(novo_funcionario.cpf, 12, stdin);
+        if(fgets(novo_funcionario.cpf, sizeof(novo_funcionario.cpf), stdin) == NULL) {
+            printf("Erro ao ler CPF, tente novamente.\n");
+            continue;
+        }
         novo_funcionario.cpf[strcspn(novo_funcionario.cpf, "\n")] = '\0';
 
         if (strlen(novo_funcionario.cpf) == 11) {
@@ -31,8 +37,6 @@ void cadastrar_funcionario(struct Funcionarios *funcionarios, int *qtd_funcionar
             printf("Erro! O CPF deve ter 11 digitos.\n");
         }
         clearBuffer();
-
-        printf("\n Funcionario cadastrado com sucesso!");
     }
 
     // Defs para o novo funcionario
@@ -48,7 +52,7 @@ void cadastrar_funcionario(struct Funcionarios *funcionarios, int *qtd_funcionar
 }
 
 
-void consultar_funcionario(struct Funcionarios *funcionarios, int qtd_funcionarios) {
+void consultar_funcionario(struct Funcionarios *funcionarios, int qtd_funcionarios){
     if (qtd_funcionarios == 0) {
         printf("Nenhum funcionario cadastrado, cadastre um e volte mais tarde!.\n");
         return;
@@ -60,25 +64,33 @@ void consultar_funcionario(struct Funcionarios *funcionarios, int qtd_funcionari
         printf("ID: %d\n", funcionarios[i].id);
         printf("Nome: %s\n", funcionarios[i].nome);
         printf("CPF: %s\n", funcionarios[i].cpf);
-        printf("Salario: %.2f\n", funcionarios[i].salario);
-        printf("Total de Vendas: %.2f\n", funcionarios[i].total_vendas);
+        printf("Salario: R$ %.2f\n", funcionarios[i].salario);
+        printf("Total de Vendas: R$ %.2f\n", funcionarios[i].total_vendas);
         printf("-------------\n");
     }
 }
 
 void cadastrar_cliente(struct Cliente *cliente, int *qtd_cliente){
+    struct Cliente novo_cliente;
+
     printf("Digite o nome do cliente: ");
-    fgets(cliente->nome, 50, stdin);
-    cliente->nome[strcspn(cliente->nome, "\n")] = '\0';
+    if(fgets(novo_cliente.nome, sizeof(novo_cliente.nome), stdin) == NULL){
+        printf("Falha ao ler nome. Tente novamente.\n");
+        return;
+    }
+    novo_cliente.nome[strcspn(novo_cliente.nome, "\n")] = '\0';
 
     int cpf_valido = 0;
 
     while (!cpf_valido) {
         printf("Digite o CPF do cliente: ");
-        fgets(cliente->cpf, 12, stdin);
-        cliente->cpf[strcspn(cliente->cpf, "\n")] = '\0';
+        if(fgets(novo_cliente.cpf, sizeof(novo_cliente.cpf), stdin) == NULL){
+            printf("Falha ao ler CPF. Tente novamente.\n");
+            continue;
+        }
+        novo_cliente.cpf[strcspn(novo_cliente.cpf, "\n")] = '\0';
 
-        if (strlen(cliente->cpf) == 11) {
+        if (strlen(novo_cliente.cpf) == 11) {
             cpf_valido = 1;
         } 
         else {
@@ -87,7 +99,8 @@ void cadastrar_cliente(struct Cliente *cliente, int *qtd_cliente){
         clearBuffer();
     }
 
-    *qtd_cliente += 1;
+    cliente[*qtd_cliente] = novo_cliente;
+    (*qtd_cliente)++;
     printf("Cliente cadastrado com sucesso!\n\n");
 }
 

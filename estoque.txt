@@ -94,3 +94,7 @@ Tipo: 1
 Tamanho: 1
 Valor: 10000.00
 Codigo: 415
+Tipo: 1
+Tamanho: 1
+Valor: 100.00
+Codigo: 323

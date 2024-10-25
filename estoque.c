@@ -25,21 +25,31 @@ void adicionar_estoque(struct Produto *estoque, int *qtd_produtos) {
     //tipo do produto
     do {
         printf("Digite o tipo do produto: ");
-        fgets(novo_produto.tipo, MAX_DIGITOS, stdin);
+        if(fgets(novo_produto.tipo, MAX_DIGITOS, stdin) == NULL) {
+            printf("Erro ao ler tipo do produto, tente novamente!\n");
+            continue;
+        }
         novo_produto.tipo[strcspn(novo_produto.tipo, "\n")] = '\0';
-    } while (strlen(novo_produto.tipo) < 0);
+    } while (strlen(novo_produto.tipo) == 0);
 
     //tamanho do produto
     do {
         printf("Digite o tamanho do produto: ");
-        fgets(novo_produto.tamanho, MAX_DIGITOS, stdin);
+        if(fgets(novo_produto.tamanho, MAX_DIGITOS, stdin) == NULL){
+            fprintf(stderr, "Erro ao ler tamanho do produto, tente novamente\n");
+            continue;
+        }
         novo_produto.tamanho[strcspn(novo_produto.tamanho, "\n")] = '\0';
-    } while (strlen(novo_produto.tamanho) < 0);
+    } while (strlen(novo_produto.tamanho) == 0);
 
     //valor do produto
     do {
         printf("Digite o valor do produto: R$ ");
-        scanf("%f", &novo_produto.valor);
+        if(scanf("%f", &novo_produto.valor) != 1){
+            fprintf(stderr, "Erro ao ler valor do produto, tente novamente\n");
+            clearBuffer();
+            continue;
+        };
         getchar();
     } while (novo_produto.valor <= 0);
 
@@ -102,7 +112,10 @@ void buscar_produto(struct Produto *estoque, int *qtd_produtos) {
 
     int codigo_busca;
     printf("Digite o codigo do produto: ");
-    scanf("%d", &codigo_busca);
+    if(scanf("%d", &codigo_busca) != 1){
+        fprintf(stderr, "Erro ao ler codigo, tente novamente\n");
+        clearBuffer();
+    };
     getchar();
 
     // Procura pelo produto no estoque

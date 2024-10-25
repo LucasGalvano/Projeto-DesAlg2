@@ -54,7 +54,11 @@ int main() {
         printf("10. Caixa da loja\n");
         printf("11. Sair\n");
         printf("Digite sua opcao: ");
-        scanf("%d", &opcao);
+        if(scanf("%d", &opcao) != 1){
+            fprintf(stderr, "Erro ao ler valor, tente novamente\n");
+            clearBuffer();
+            continue;
+        };
         clearBuffer();
 
         switch (opcao) {
