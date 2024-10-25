@@ -31,6 +31,8 @@ void cadastrar_funcionario(struct Funcionarios *funcionarios, int *qtd_funcionar
             printf("Erro! O CPF deve ter 11 digitos.\n");
         }
         clearBuffer();
+
+        printf("\n Funcionario cadastrado com sucesso!");
     }
 
     // Defs para o novo funcionario
@@ -84,6 +86,8 @@ void cadastrar_cliente(struct Cliente *cliente, int *qtd_cliente){
         }
         clearBuffer();
     }
+
+    *qtd_cliente += 1;
     printf("Cliente cadastrado com sucesso!\n\n");
 }
 

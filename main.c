@@ -59,7 +59,7 @@ int main() {
 
         switch (opcao) {
             case 1:
-                registrar_venda(estoque, &qtd_produtos, funcionarios, qtd_funcionarios, &caixa);  // Passa o caixa
+                registrar_venda(estoque, &qtd_produtos, funcionarios, qtd_funcionarios, &caixa);
                 break;
             case 2:
                 adicionar_estoque(estoque, &qtd_produtos); 
@@ -86,7 +86,7 @@ int main() {
                 gerarRelatorio();
                 break;
             case 10:
-                printf("Caixa da loja: R$: %.2f\n", caixa.saldo);  // Exibe o saldo do caixa
+                printf("Caixa da loja: R$: %.2f\n", caixa.saldo);
                 break;
             case 11:
                 printf("Saindo...\n");

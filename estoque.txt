@@ -90,3 +90,7 @@ Tipo: palio
 Tamanho: gigante
 Valor: 20000.00
 Codigo: 382
+Tipo: 1
+Tamanho: 1
+Valor: 10000.00
+Codigo: 415
