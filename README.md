@@ -2,7 +2,7 @@
 
 Funcionalidades
 -------------------------
-Adicionar Produto ao Estoque: Permite adicionar novos produtos ao estoque com informações como tipo, tamanho, valor e código gerado.
+Adicionar Produto ao Estoque: Permite adicionar novos produtos ao estoque com informações como tipo, tamanho, valor e código gerado,porém diminui o saldo do caixa da loja.
 
 Salvar Produto em Arquivo: As informações dos produtos adicionados são salvas em um arquivo de texto.
 
