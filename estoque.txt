@@ -98,3 +98,15 @@ Tipo: 1
 Tamanho: 1
 Valor: 100.00
 Codigo: 323
+Tipo: bola de ouro do rodri
+Tamanho: roubo
+Valor: 2.00
+Codigo: 767
+Tipo: camisa adidas
+Tamanho: g
+Valor: 120.00
+Codigo: 252
+Tipo: bola
+Tamanho: 1
+Valor: 300.00
+Codigo: 912

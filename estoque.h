@@ -1,10 +1,13 @@
 #ifndef estoque_h
 #define estoque_h
 
+#include "caixa.h"
+
+
 #define MAX_PRODUTOS 100
 #define MAX_DIGITOS 50
 
-// Estrutura para armazenar as informações do produto
+
 struct Produto {
     char tipo[MAX_DIGITOS];
     char tamanho[MAX_DIGITOS];
@@ -13,7 +16,7 @@ struct Produto {
 };
 
 
-void adicionar_estoque(struct Produto *estoque, int *qtd_produtos);
+void adicionar_estoque(struct Produto *estoque, int *qtd_produtos,struct Caixa *caixa);
 void estoque_txt(struct Produto produto);
 void exibir_estoque(struct Produto *estoque, int *qtd_produtos);
 void buscar_produto(struct Produto *estoque, int *qtd_produtos);

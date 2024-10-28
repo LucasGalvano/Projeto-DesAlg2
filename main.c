@@ -11,7 +11,7 @@
 int main() {
 
     // Def para a loja
-    struct Caixa caixa = {0.0};
+    struct Caixa caixa = {10000.0};
     struct Loja loja;
     int logado = 0;
     cadastrar_loja(&loja);
@@ -66,7 +66,7 @@ int main() {
                 registrar_venda(estoque, &qtd_produtos, funcionarios, qtd_funcionarios, &caixa);
                 break;
             case 2:
-                adicionar_estoque(estoque, &qtd_produtos); 
+                adicionar_estoque(estoque, &qtd_produtos, &caixa); 
                 break;
             case 3:
                 exibir_estoque(estoque, &qtd_produtos);
