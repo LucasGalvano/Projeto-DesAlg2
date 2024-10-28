@@ -1,6 +1,6 @@
 # Loja de Roupas - Sistema de Gestão
 
-Este projeto consiste em um sistema de gestão para uma loja de roupas, com diversas funcionalidades que permitem controlar as vendas, estoque, cadastro de funcionários e clientes, além de gerar relatórios e gerenciar o caixa da loja. O código foi organizado em diferentes branches, cada uma responsável por um aspecto específico da operação da loja.
+Este projeto consiste em um sistema de gestão para uma loja de roupas com um saldo inicial de 10 mil reais, com diversas funcionalidades que permitem controlar as vendas, estoque, cadastro de funcionários e clientes, além de gerar relatórios e gerenciar o caixa da loja. O código foi organizado em diferentes branches, cada uma responsável por um aspecto específico da operação da loja.
 
 ## Funcionalidades Principais
 
