@@ -2,6 +2,8 @@
 
 Este projeto consiste em um sistema de gestão para uma loja de roupas com um saldo inicial de 10 mil reais, com diversas funcionalidades que permitem controlar as vendas, estoque, cadastro de funcionários e clientes, além de gerar relatórios e gerenciar o caixa da loja. O código foi organizado em diferentes branches, cada uma responsável por um aspecto específico da operação da loja.
 
+Para rodar o código no terminal, utilize o comando "gcc main.c caixa.c estoque.c funcoes.c publico.c"
+
 ## Funcionalidades Principais
 
 1. Registrar venda
